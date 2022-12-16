@@ -23,4 +23,12 @@ export class TaskService {
       err=>err
     )
   }
+
+  public update(task:any,id:number):Observable<Task>{
+
+    return this.http.patch<Task>(`${this.URL}/${id}`,task).pipe(
+      res=>res,
+      err=>err
+    )
+  }
 }

@@ -1,0 +1,26 @@
+
+<div 
+    class="modal" 
+    id="exampleModal" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true"
+    [ngStyle]="{'display':showModal?'block':'none'}"
+>
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{title}}</h1>
+          <button type="button" (click)="showModal=false" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{conteudo.trim()?conteudo:'Nenhuma descrição da tarefa'}}
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" (click)="showModal=false" class="btn btn-primary">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>

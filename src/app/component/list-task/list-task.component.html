@@ -1,7 +1,47 @@
+<div class="card mt-5">
+    <div class="card-header">
+        <h3>My Tasks</h3>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
 
+                <tr>
+                    <th>Estate</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Operações</th>
+                </tr>
+            </thead>
 
-<ul>
-    <li *ngFor="let task of tasks">
-        {{task.title}}
-    </li>
-</ul>
+            <tbody>
+                <tr *ngFor="let task of tasks">
+                    <td>
+                        <div class="form-check">
+                            <input (change)="showState(task)" class="form-check-input" type="checkbox" value=""
+                                [id]="'flexCheckDefault'+task.id" [checked]="task.isFinished">
+                            <label class="form-check-label" [htmlFor]="'flexCheckDefault'+task.id">
+                                {{ task.isFinished ? 'Concluida' :'Andamento'}}
+                            </label><i class="fas fa-cloud-showers-heavy    "></i>
+                        </div>
+                    </td>
+                    <td>{{task.title}}</td>
+                    <td>
+                        <button type="button" (click)="modal.showModal=true" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Descrição
+                        </button>
+
+                        <app-modal-message #modal [title]="task.title" [conteudo]="task.description"></app-modal-message>
+                    </td>
+
+                    <td>
+                        <button class="btn btn-success mr-2">Editar</button>
+                        <button class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

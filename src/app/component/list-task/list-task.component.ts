@@ -17,10 +17,42 @@ export class ListTaskComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.loadData()
+  }
+
+  public loadData(){
     this.taskService.findAll().subscribe({
       next:(tasks)=>{this.tasks=tasks}
     })
   }
 
+  public showState(task:Task){
+
+
+    const taskUpdateState = {...task,isFinished: !task.isFinished}
+
+    this.update(taskUpdateState);
+
+  }
+
+  public update(task:Task){
+
+    const body = {...task,id:undefined}
+    const id = task.id
+
+    this.taskService.update(body,id).subscribe({
+      next:(task:Task)=>{
+      
+      },
+      error:()=>{
+        
+      },
+      complete:()=>{
+        this.loadData()
+      }
+    })
+
+
+  }
 
 }

@@ -19,6 +19,8 @@ export class ModalMessageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
 
 }

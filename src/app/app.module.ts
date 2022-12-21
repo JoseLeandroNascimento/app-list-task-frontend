@@ -6,19 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListTaskComponent } from './component/list-task/list-task.component';
 import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
-import { ModalMessageComponent } from './component/modal-message/modal-message.component';
 import { AddTaskComponent } from './pages/add-task/add-task.component';
 import { FormTaskComponent } from './component/form-task/form-task.component';
 import { FormsModule } from '@angular/forms';
+import { DescricaoTaskComponent } from './pages/descricao-task/descricao-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyTasksComponent,
     ListTaskComponent,
-    ModalMessageComponent,
     AddTaskComponent,
-    FormTaskComponent
+    FormTaskComponent,
+    DescricaoTaskComponent
   ],
   imports: [
     BrowserModule,

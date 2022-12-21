@@ -51,8 +51,16 @@ export class ListTaskComponent implements OnInit {
         this.loadData()
       }
     })
-
-
   }
 
+  public delete(id:number){
+
+    this.taskService.delete(id).subscribe({
+
+      complete:()=>{
+
+        this.loadData();
+      }
+    })
+  }
 }

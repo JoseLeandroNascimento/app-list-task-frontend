@@ -49,4 +49,12 @@ export class TaskService {
       error=>error
     )
   }
+
+  public delete(id:number){
+
+    return this.http.delete(`${this.URL}/${id}`).pipe(
+      res=>res,
+      error=>error
+    )    
+  }
 }
